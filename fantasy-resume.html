@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Engineer Resume - Blade Runner Terminal</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', monospace;
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        #particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        #content {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+            border: 1px solid #ff00ff;
+            box-shadow: 0 0 20px rgba(255,0,255,0.2);
+            background-color: rgba(10,10,10,0.8);
+        }
+        h1, h2 {
+            color: #00ffff;
+            border-bottom: 1px solid #ff00ff;
+            padding-bottom: 5px;
+            text-shadow: 0 0 5px #00ffff;
+        }
+        .job {
+            margin-bottom: 20px;
+        }
+        .job-title {
+            font-weight: bold;
+            color: #ff00ff;
+        }
+        .company {
+            font-style: italic;
+            color: #ff00ff;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        li::before {
+            content: ">";
+            color: #00ffff;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        #cursor {
+            display: inline-block;
+            width: 10px;
+            height: 20px;
+            background-color: #ff00ff;
+            animation: blink 0.7s infinite;
+        }
+        @keyframes blink {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+        #terminal-header {
+            background-color: #1a1a1a;
+            color: #00ffff;
+            padding: 5px 10px;
+            font-size: 14px;
+            border-bottom: 1px solid #ff00ff;
+            text-shadow: 0 0 5px #00ffff;
+        }
+        .command {
+            color: #ff00ff;
+            margin-bottom: 10px;
+        }
+        .command::before {
+            content: "$ ";
+            color: #00ffff;
+        }
+        .glitch {
+            animation: glitch 1s linear infinite;
+            position: relative;
+        }
+        @keyframes glitch {
+            2%, 64% { transform: translate(2px,0) skew(0deg); }
+            4%, 60% { transform: translate(-2px,0) skew(0deg); }
+            62% { transform: translate(0,0) skew(5deg); }
+        }
+        .glitch:before,
+        .glitch:after {
+            content: attr(title);
+            position: absolute;
+            left: 0;
+        }
+        .glitch:before {
+            animation: glitchTop 1s linear infinite;
+            clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+        }
+        @keyframes glitchTop {
+            2%, 64% { transform: translate(2px,-2px); }
+            4%, 60% { transform: translate(-2px,2px); }
+            62% { transform: translate(13px,-1px) skew(-13deg); }
+        }
+        .glitch:after {
+            animation: glitchBottom 1.5s linear infinite;
+            clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+            -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+        }
+        @keyframes glitchBottom {
+            2%, 64% { transform: translate(-2px,0); }
+            4%, 60% { transform: translate(-2px,0); }
+            62% { transform: translate(-22px,5px) skew(21deg); }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="particles"></canvas>
+    <div id="content">
+        <div id="terminal-header" class="glitch" title="resume.sh - Cybernetic Engineer">resume.sh - Cybernetic Engineer</div>
+        <div class="command">cat neural_implant_resume.txt</div>
+        <h1>Cybernetic Engineer <span id="cursor"></span></h1>
+
+        <h2>Professional Experience</h2>
+
+        <div class="job">
+            <div class="job-title">Neural Network Engineer</div>
+            <div class="company">Tyrell Corporation, Neo-Tokyo — May 2022 - Present</div>
+            <ul>
+                <li>C/C++ Backend development on real-time neural implant services</li>
+                <li>Optimizing memory constraints for human-machine interface</li>
+                <li>Implementing cutting-edge AI practices and upgrading legacy human protocols</li>
+                <li>Designed and implemented a metrics library for tracking replicant behavior</li>
+                <li>Technologies: C++, C, Python, Wetware</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-title">Synthetic Memory Engineer</div>
+            <div class="company">Lacuna Inc., Remote</div>
+            <ul>
+                <li>C/C++ Backend development on distributed memory-archive database</li>
+                <li>Unit and integration testing with BrainScan and NeuralLua</li>
+                <li>Development on custom DSL for memory implantation</li>
+                <li>Deployment of software to human and replicant test subjects</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-title">Cybernetic Implant Engineer</div>
+            <div class="company">Sarif Industries, Detroit / Remote</div>
+            <ul>
+                <li>Embedded real-time systems development for cybernetic augmentations</li>
+                <li>Implemented control systems: Optical Enhancement, Dermal Armor, Cybernetic Limbs</li>
+                <li>Developed custom neural interface analyzers</li>
+                <li>Designed safety-critical human-machine integration protocols</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-title">Mainframe Administrator</div>
+            <div class="company">Cyberdyne Systems, Los Angeles — July 2015 - June 2018</div>
+            <ul>
+                <li>Managed the central AI Helpdesk for human-cyborg relations</li>
+                <li>Trained and managed all cyborg workforce</li>
+                <li>Coordinated technical needs for human-machine coexistence</li>
+                <li>Conducted Q&A sessions with newly augmented citizens</li>
+            </ul>
+        </div>
+
+        <h2>Education</h2>
+        <p><strong>B.S. Cybernetic Engineering</strong><br>
+        Neo-Tokyo Institute of Technology — May 2018</p>
+
+        <h3>Notable Projects</h3>
+        <ul>
+            <li>Developed a BASIC compiler for human-brain interface</li>
+            <li>Implemented neural-link models for drone control via thought</li>
+        </ul>
+
+        <h2>Additional Information</h2>
+        <ul>
+            <li>Previously held clearance for government AI integration work</li>
+            <li>Created a neural programming language called Nibi</li>
+        </ul>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('particles');
+        const ctx = canvas.getContext('2d');
+        const particles = [];
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2;
+                this.speedX = Math.random() * 0.5 - 0.25;
+                this.speedY = Math.random() * 0.5 - 0.25;
+                this.color = Math.random() < 0.5 ? '#ff00ff' : '#00ffff';
+                this.opacity = 0;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.opacity < 0.5) {
+                    this.opacity += 0.01;
+                }
+            }
+            draw() {
+                ctx.fillStyle = this.color + Math.floor(this.opacity * 255).toString(16).padStart(2, '0');
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function init() {
+            for (let i = 0; i < 100; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animate() {
+            ctx.fillStyle = 'rgba(10, 10, 10, 0.1)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(particle => {
+                particle.update();
+                particle.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+
+        init();
+        animate();
+
+        setTimeout(() => {
+            document.getElementById('content').style.opacity = 1;
+        }, 1000);
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+</body>
+</html>
