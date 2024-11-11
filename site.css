@@ -1,0 +1,115 @@
+:root {
+    --terminal-green: #00ff00;
+    --terminal-bg: #000000;
+    --accent-color: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Share Tech Mono', monospace;
+    background-color: var(--terminal-bg);
+    color: var(--accent-color);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.terminal {
+    height: 100vh;
+    position: relative;
+}
+
+.screen-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+    background-size: 100% 4px;
+    pointer-events: none;
+    animation: flicker 0.15s infinite;
+    z-index: 2;
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 80px);
+    padding: 20px;
+}
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px solid var(--accent-color);
+    margin-bottom: 2rem;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.terminal-text {
+    max-width: 600px;
+    text-align: left;
+    position: relative;
+    width: 80vw;
+    margin: 0 auto;
+}
+
+.cursor {
+    animation: blink 1s step-end infinite;
+}
+
+.nav-bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 100%);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-icon {
+    width: 32px;
+    height: 32px;
+    fill: var(--accent-color);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.nav-icon:hover {
+    fill: var(--terminal-green);
+    transform: scale(1.1);
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@keyframes flicker {
+    0% { opacity: 0.97; }
+    100% { opacity: 0.99; }
+}
+
+@media (max-width: 768px) {
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+}
