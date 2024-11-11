@@ -4,11 +4,19 @@ document.addEventListener('DOMContentLoaded', () => {
 > Loading profile data...
 > Access granted...
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-Sed do eiusmod tempor incididunt ut labore et dolore 
-magna aliqua. Ut enim ad minim veniam, quis nostrud 
-exercitation ullamco laboris nisi ut aliquip ex ea 
-commodo consequat.`;
+I don't much care for describing myself so I fed my resume into an AI
+model and asked it to describe me to a potential employer.
+
+This is the "tldr" it generated from its first response:
+
+Experienced C/C++ engineer specializing in real-time, mission-critical 
+systems with a strong track record in backend development and embedded systems.
+Currently at San Luis Aviation, developing chat services for emergency 
+and medical use, and previously worked on distributed systems and custom DSLs.
+Proficient in C/C++, Python, and Go, with solid skills in project management and 
+leadership. Ready to bring my expertise and passion for software development to new,
+challenging opportunities. 
+`;
 
     const typedTextElement = document.getElementById('typed-text');
     let currentChar = 0;

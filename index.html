@@ -1,146 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="Josh Bosley" />
-    <meta
-      name="description"
-      content="Personal website "
-    />
-    <title>Josh Bosley</title>
-
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
-    />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.min.css" integrity="sha512-xiunq9hpKsIcz42zt0o2vCo34xV0j6Ny8hgEylN3XBglZDtTZ2nwnqF/Z/TTCc18sGdvCjbFInNd++6q3J0N6g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://milligram.io/styles/main.css" />
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto+Slab">
-
-    <script src="https://unpkg.com/htmx.org@2.0.2" integrity="sha384-Y7hw+L/jvKeWIRRkqWYfPcvVxHzVzn5REgzbawhxAuQGwX1XWe70vji+VSeHOThJ" crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" href="assets/custom.css">
-  </head>
-  <nav class="navigation">
-    <section class="container">
-      <a class="navigation-title" href="">
-        <h1 class="title">Josh Bosley</h1>
-            - dev
-      </a>
-      <ul class="navigation-list float-right">
-        <li class="navigation-item">
-           <a class="navigation-link" href="resume.html"> resume</a>
-        </li>
-         <li class="navigation-item">
-         <!-- Start Popovers -->
-           <a class="navigation-link" href="#popover-0" data-popover
-             >+projects</a
-           >
-           <div class="popover" id="popover-0">
-             <ul class="popover-list">
-             <li class="popover-item">
-                 <a
-                   class="popover-link"
-                   href="https://github.com/nibi-lang/nibi"
-                   title="nibi lisp-inspired languge"
-                   >nibi languge</a
-                 >
-               </li>
-               <li class="popover-item">
-                 <a
-                   class="popover-link"
-                   href="https://github.com/bosley/Active-Contours"
-                   title="active contours research"
-                   >active deformable models</a
-                 >
-               </li>
-               <li class="popover-item">
-                 <a
-                   class="popover-link"
-                   href="https://gitlab.com/lambdavm/lvm"
-                   title="rust-based virtual machine"
-                   >λ virtual machine</a
-                 >
-               </li>
-               <li class="popover-item">
-                 <a
-                   class="popover-link"
-                   href="https://github.com/astroskiff"
-                   title="c++ virtual machine"
-                   >astro+skiff</a
-                 >
-               </li>
-             <li class="popover-item">
-                 <a
-                   class="popover-link"
-                   href="https://github.com/bosley/UNAS-Interpreter"
-                   title="csci3xx project"
-                   >first compiler</a
-                 >
-               </li>
-             </ul>
-           </div>
-         </li>
-      </ul>
-    </section>
-  </nav>
-  <body>
-  <main class="wrapper">
-  <section class="container" id="page-content">
-    <center>
-        <img src="https://media.githubusercontent.com/media/bosley/website/main/assets/photo.png" alt="" width="33.3333%">
-    </center>
-
-
-    <div class="row" id="example-post-a">
-      <div class="column">
-        <center>
-          <h1 class="title"><b>about.md</b></h1>
-        </center>
-      <p>
-        I don't much care for describing myself so I fed my <a href="resume.html"> resume</a> into an AI model and asked it to describe me to a potential employer.
-      
-      </p>
-      <p>
-        This is the "tldr" it generated from its first response:
-      </p>
-      <p>
-        <div class="column">
-
-        Experienced C/C++ engineer specializing in real-time, mission-critical systems with a strong track record in backend development and embedded systems. 
-        <br>
-        Currently at San Luis Aviation, developing chat services for emergency and medical use, and previously worked on distributed systems and custom DSLs.
-        <br>
-        Proficient in C/C++, Python, and Go, with solid skills in project management and leadership.
-        <br>
-        Ready to bring my expertise and passion for software development to new, challenging opportunities.
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+    <main class="terminal">
+        <div class="screen-overlay"></div>
+        <div class="profile-container">
+            <img src="/assets/photo.png" alt="Profile Photo" class="profile-image">
+            <div class="terminal-text">
+                <span class="cursor">_</span>
+                <div id="typed-text"></div>
+            </div>
         </div>
-
-      </p>
-      </div>
-    </div>
-
-
-
-
-
-
-
-
-
-
-</section>
-<footer class="footer">
-    <section class="container">
-      Josh Bosley &mdash; <a href="me@joshbosley.dev">Contact</a>
-    </section>
-</footer>
-</main>
-<script src="https://milligram.io/scripts/main.js"></script>
+        <nav class="nav-bar">
+            <div class="nav-icons">
+                <svg class="nav-icon" id="resume-icon" viewBox="0 0 24 24" onclick="window.location.href='resume.html'">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1v5h5v10H6V3h7z"/>
+                    <path d="M8 12h8v1H8zm0 3h8v1H8zm0-6h3v1H8z"/>
+                </svg>
+                <svg class="nav-icon" id="projects-icon" viewBox="0 0 24 24" onclick="window.location.href='projects.html'">
+                    <path d="M3 3h18v18H3V3zm16 16V5H5v14h14z"/>
+                    <path d="M7 7h4v4H7V7zm6 0h4v4h-4V7zm-6 6h4v4H7v-4zm6 0h4v4h-4v-4z"/>
+                </svg>
+                <svg class="nav-icon" id="contact-icon" viewBox="0 0 24 24" onclick="window.location.href='mailto:me@joshbosley.dev'">
+                    <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z"/>
+                </svg>
+            </div>
+        </nav>
+    </main>
+    <script src="site.js"></script>
 </body>
 </html>
