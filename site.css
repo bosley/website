@@ -113,3 +113,64 @@ body {
         height: 150px;
     }
 }
+
+.resume-container {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    height: calc(100vh - 80px);
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-color) var(--terminal-bg);
+}
+
+.resume-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.resume-container::-webkit-scrollbar-track {
+    background: var(--terminal-bg);
+}
+
+.resume-container::-webkit-scrollbar-thumb {
+    background-color: var(--accent-color);
+}
+
+.section-header {
+    color: var(--terminal-green);
+    margin: 2rem 0 1rem 0;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+.job-entry {
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: slideIn 0.5s forwards;
+}
+
+.job-title {
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.job-date {
+    color: #888;
+    font-size: 0.9em;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
