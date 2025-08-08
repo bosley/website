@@ -1,54 +1,115 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const loremIpsum = `Terminal initialized...
+const themeToggle = document.querySelector('.theme-toggle');
+const appsToggle = document.querySelector('.apps-toggle');
+const appsDrawer = document.querySelector('.apps-drawer');
+const body = document.body;
 
-> Loading profile data...
-> Access granted...
+const savedTheme = localStorage.getItem('theme') || 'light';
+document.documentElement.setAttribute('data-theme', savedTheme);
 
-I don't much care for describing myself so I fed my resume into an AI
-model and asked it to describe me to a potential employer.
-
-This is the "tldr" it generated from its first response:
-
-Experienced C/C++ engineer specializing in real-time, mission-critical 
-systems with a strong track record in backend development and embedded systems.
-Currently at San Luis Aviation, developing chat services for emergency 
-and medical use, and previously worked on distributed systems and custom DSLs.
-Proficient in C/C++, Python, and Go, with solid skills in project management and 
-leadership. Ready to bring my expertise and passion for software development to new,
-challenging opportunities. 
-`;
-
-    const typedTextElement = document.getElementById('typed-text');
-    let currentChar = 0;
+themeToggle.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
     
-    function typeText() {
-        if (currentChar < loremIpsum.length) {
-            // Format the text with proper line breaks and spacing
-            const formattedText = loremIpsum.slice(0, currentChar + 1)
-                .split('\n')
-                .map(line => line.trim())
-                .join('<br>')
-                .replace(/ /g, '&nbsp;');
-            
-            typedTextElement.innerHTML = formattedText;
-            currentChar++;
-            
-            // Reduced delay range for faster typing
-            const randomDelay = Math.random() * 20 + 10;
-            setTimeout(typeText, randomDelay);
-        }
-    }
-
-    // Add event listeners for navigation icons
-    const icons = document.querySelectorAll('.nav-icon');
-    icons.forEach(icon => {
-        icon.addEventListener('click', (e) => {
-            const section = e.currentTarget.id.split('-')[0];
-            // TODO: Implement navigation logic
-            console.log(`Navigating to ${section}`);
-        });
-    });
-
-    // Start typing effect
-    setTimeout(typeText, 1000);
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    
+    const icon = themeToggle.querySelector('.theme-icon');
+    icon.style.transform = 'rotate(180deg)';
+    setTimeout(() => {
+        icon.style.transform = 'rotate(0deg)';
+    }, 300);
 });
+
+appsToggle.addEventListener('click', () => {
+    appsDrawer.classList.toggle('open');
+    body.style.overflow = appsDrawer.classList.contains('open') ? 'hidden' : '';
+});
+
+document.addEventListener('click', (e) => {
+    if (!appsDrawer.contains(e.target) && !appsToggle.contains(e.target)) {
+        appsDrawer.classList.remove('open');
+        body.style.overflow = '';
+    }
+});
+
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('section').forEach(section => {
+    section.style.opacity = '0';
+    section.style.transform = 'translateY(20px)';
+    section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(section);
+});
+
+let lastScroll = 0;
+const navbar = document.querySelector('.navbar');
+
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll <= 0) {
+        navbar.style.transform = 'translateY(0)';
+        return;
+    }
+    
+    if (currentScroll > lastScroll && currentScroll > 100) {
+        navbar.style.transform = 'translateY(-100%)';
+    } else {
+        navbar.style.transform = 'translateY(0)';
+    }
+    
+    lastScroll = currentScroll;
+});
+
+document.querySelectorAll('.app-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+        const rect = link.getBoundingClientRect();
+        const ripple = document.createElement('div');
+        ripple.style.position = 'fixed';
+        ripple.style.left = rect.left + 'px';
+        ripple.style.top = rect.top + 'px';
+        ripple.style.width = rect.width + 'px';
+        ripple.style.height = rect.height + 'px';
+        ripple.style.background = 'var(--accent-color)';
+        ripple.style.opacity = '0.5';
+        ripple.style.pointerEvents = 'none';
+        ripple.style.transition = 'all 0.6s ease';
+        ripple.style.zIndex = '9999';
+        
+        document.body.appendChild(ripple);
+        
+        setTimeout(() => {
+            ripple.style.transform = 'scale(3)';
+            ripple.style.opacity = '0';
+        }, 10);
+        
+        setTimeout(() => {
+            ripple.remove();
+        }, 600);
+    });
+});
+
+const heroTitle = document.querySelector('.hero-title');
+if (heroTitle) {
+    heroTitle.addEventListener('mouseenter', () => {
+        heroTitle.style.transform = 'skew(-2deg)';
+    });
+    
+    heroTitle.addEventListener('mouseleave', () => {
+        heroTitle.style.transform = 'skew(0deg)';
+    });
+    
+    heroTitle.style.transition = 'transform 0.2s ease';
+}

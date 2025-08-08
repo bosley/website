@@ -7,8 +7,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 # Employment
 
+[Insula Labs] Lead Software Engineer
+Jan 2025 - Current
+• Developed a distributed real-time k/v + eventing system for messaging and notifications in GoLang (insight)
+• Server-side custom CMS development in GoLang utilizing the insi database
+• Successfully completed multiple contracted app deployments taking customer's AI generated services to make them production ready
+• Conducted multiple training sessions of utilizing AI tools for backend infrastructure development and maintenance
+
 [San Luis Aviation] Linux Engineer (Remote)
-May 2022 - Current
+May 2022 - Jan 2025
 • C/C++ Backend development on real time chat services infrastructure
 • Designed static-memory metrics library using modern C++
 • APNS mock server for platform testing

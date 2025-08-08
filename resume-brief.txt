@@ -1,0 +1,37 @@
+
+# Employment
+
+[Insula Labs] Lead Software Engineer
+Jan 2025 - Current
+• Developed a distributed real-time k/v + eventing system for messaging and notifications in GoLang (insight)
+• Server-side custom CMS development in GoLang utilizing the insi database
+• Successfully completed multiple contracted app deployments taking customer's AI generated services to make them production ready
+• Conducted multiple training sessions of utilizing AI tools for backend infrastructure development and maintenance
+
+[San Luis Aviation] Linux Engineer (Remote)
+May 2022 - Jan 2025
+• C/C++ Backend development on real time chat services infrastructure
+• Designed static-memory metrics library using modern C++
+• APNS mock server for platform testing
+• Develop/Maintain in-house signaling protocol libraries
+• Updating large C++ code base to modern standards and techniques
+
+[Circonus] Systems Engineer (Remote)
+Nov 2021 - May 2022
+• C/C++ Backend development on distributed time-series database IRONdb
+• Using GoogleTest and Busted (Lua) for unit and integration testing
+• Development on custom DSL Circonus Analytic Query Language (CAQL)
+• Deployment of software to dev and prod clusters on EL7 and Ubuntu
+
+[DCS/US Army] Computer Engineer II
+June 2018 - Nov 2021
+• Embedded real-time systems development on military vehicles
+• Implemented GPS-153D specification for DAGR device (C++11)
+• Vehicle N-Battery battery management software
+• Custom Wireshark protocol analyzers (Lua)
+
+# Education
+
+[LSSU] Computer Science B.S
+2013-2018
+• Graduated with department GPA of >3.0 while working full time

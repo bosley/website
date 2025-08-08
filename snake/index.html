@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>SNAKE - BRUTAL EDITION</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <div class="game-container">
+        <header class="game-header">
+            <h1 class="game-title">SNAKE</h1>
+            <div class="game-stats">
+                <div class="stat">
+                    <span class="stat-label">SCORE</span>
+                    <span class="stat-value" id="score">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">HIGH</span>
+                    <span class="stat-value" id="highscore">0</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="game-board" id="gameBoard">
+            <canvas id="gameCanvas"></canvas>
+        </div>
+
+        <div class="game-overlay" id="gameOverlay">
+            <div class="overlay-content">
+                <h2 class="overlay-title">PRESS SPACE</h2>
+                <p class="overlay-subtitle">OR TAP TO START</p>
+            </div>
+        </div>
+
+        <div class="game-controls">
+            <div class="controls-dpad">
+                <button class="control-btn control-up" data-dir="up">▲</button>
+                <div class="control-row">
+                    <button class="control-btn control-left" data-dir="left">◄</button>
+                    <button class="control-btn control-center" disabled>●</button>
+                    <button class="control-btn control-right" data-dir="right">►</button>
+                </div>
+                <button class="control-btn control-down" data-dir="down">▼</button>
+            </div>
+            <div class="controls-info">
+                <span>USE ARROWS OR SWIPE</span>
+            </div>
+        </div>
+
+        <footer class="game-footer">
+            <a href="../" class="back-link">← BACK</a>
+            <span class="footer-text">BRUTAL SNAKE</span>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
